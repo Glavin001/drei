@@ -144,3 +144,20 @@ export const InsideContainerStory = () => (
   </Container>
 )
 InsideContainerStory.storyName = 'Inside a container'
+
+export const TabsStory = () => {
+  const [visible, setVisible] = React.useState(true)
+  return (
+    <div style={{ height: '90%' }}>
+      <button type="button" onClick={() => setVisible((prev) => !prev)}>
+        {visible ? 'Hide' : 'Show'}
+      </button>
+      {visible && (
+        <ScrollControlsSetup>
+          <DefaultStory />
+        </ScrollControlsSetup>
+      )}
+    </div>
+  )
+}
+TabsStory.storyName = 'Tabs'
